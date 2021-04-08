@@ -2,6 +2,7 @@
 
 <body style="background-color:lightblue;">
 
+<img id="AliceEve" width="0" height="0" style="visibility:hidden" src="AliceEve.png">
 
 <canvas id="myCanvas" onload = 'move()' onclick = "clickfunc()" width="800" height="400" style=" padding-left: 0;
     padding-right: 0;
@@ -14,22 +15,10 @@
 
 </body>
 
-<audio id="myAudio">
-  <source src="fire.mp3" type="audio/mp3">
-</audio>
-
-<audio id="myAudio2">
-  <source src="reloadsound.mp3" type="audio/mp3">
-</audio>
-
 <script>
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 ctx.font = "16px Arial";
-
-var firesound = document.getElementById("myAudio"); 
-
-var reloadsounds = document.getElementById("myAudio2"); 
 
 var canvasX = 0; 
 var canvasY = 0; 
@@ -41,14 +30,7 @@ canvas.addEventListener("mousemove", function(e) {
 
 var myVar = setInterval(move, 20);
 
-var fire = 0; 
-var fireTimer = 0; 
-
-var ammo = 7; 
-
-var reload = 0; 
-
-var reloadTimer = 0;
+var blockArray = [];
 
 function playAudio() { 
   x.play(); 
@@ -62,15 +44,35 @@ function clickfunc(){
 
 }
 
+
+var block = function(x,y,p) {
+    this.x = x;
+    this.y = y;
+	this.p = p; 
+};
+
+
+block.prototype.draw = function() {
+ctx.drawImage(this.p, this.x, this.y, 150, 200);
+};
+
+blockArray.push(new block(100, 100,AliceEve));
+
+
+
 function move() {
 
 //BG
 ctx.fillStyle = "black";
 ctx.fillRect(0,0, 800, 400);
 
+for(var i = 0; i < blockArray.length ; i++) {
+        blockArray[i].draw();
+}
+
 
 ctx.fillStyle = "lightblue";
-ctx.fillRect(canvasX,canvasY, 40, 40);
+ctx.fillRect(canvasX,canvasY, 10, 10);
 
 ctx.font = "30px Arial";
 //ctx.fillText("RELOADING", 10, 380);}
