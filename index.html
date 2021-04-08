@@ -2,43 +2,10 @@
 
 <body style="background-color:lightblue;">
 
-<img id="AliceEve" width="0" height="0" style="visibility:hidden" src="AliceEve.png">
-<img id="AlexandraDaddario" width="0" height="0" style="visibility:hidden" src="AlexandraDaddario.png">
-<img id="AmandaSeyfried" width="0" height="0" style="visibility:hidden" src="AmandaSeyfried.png">
-<img id="AnaDeArmas" width="0" height="0" style="visibility:hidden" src="AnaDeArmas.png">
-<img id="AnneHathaway" width="0" height="0" style="visibility:hidden" src="AnneHathaway.png">
-<img id="AnyaTaylorJoy" width="0" height="0" style="visibility:hidden" src="AnyaTaylorJoy.png">
-<img id="ArielWinter" width="0" height="0" style="visibility:hidden" src="ArielWinter.png">
-<img id="BarbaraPalvin" width="0" height="0" style="visibility:hidden" src="BarbaraPalvin.png">
-<img id="BellaThorne" width="0" height="0" style="visibility:hidden" src="BellaThorne.png">
-<img id="BlakeLively" width="0" height="0" style="visibility:hidden" src="BlakeLively.png">
-<img id="BrendaSong" width="0" height="0" style="visibility:hidden" src="BrendaSong.png">
-<img id="CamilaMendes" width="0" height="0" style="visibility:hidden" src="CamilaMendes.png">
-<img id="ChloeBennet" width="0" height="0" style="visibility:hidden" src="ChloeBennet.png">
-<img id="DebbyRyan" width="0" height="0" style="visibility:hidden" src="DebbyRyan.png">
-<img id="ElizabethOlsen" width="0" height="0" style="visibility:hidden" src="ElizabethOlsen.png">
+<img id="one" width="0" height="0" style="visibility:hidden" src="one.png">
 
-<img id="ElleFanning" width="0" height="0" style="visibility:hidden" src="ElleFanning.png">
-<img id="EmiliaClarke" width="0" height="0" style="visibility:hidden" src="EmiliaClarke.png">
-<img id="EmilyBlunt" width="0" height="0" style="visibility:hidden" src="EmilyBlunt.png">
-<img id="EmmaStone" width="0" height="0" style="visibility:hidden" src="EmmaStone.png">
-<img id="EmmaWatson" width="0" height="0" style="visibility:hidden" src="EmmaWatson.png">
-<img id="EmmyRossum" width="0" height="0" style="visibility:hidden" src="EmmyRossum.png">
-<img id="GalGadot" width="0" height="0" style="visibility:hidden" src="GalGadot.png">
-<img id="GemmaArterton" width="0" height="0" style="visibility:hidden" src="GemmaArterton.png">
-<img id="HaileeSteinfeld" width="0" height="0" style="visibility:hidden" src="HaileeSteinfeld.png">
-<img id="HayleyAtwell" width="0" height="0" style="visibility:hidden" src="HayleyAtwell.png">
-<img id="IsabelaMerced" width="0" height="0" style="visibility:hidden" src="IsabelaMerced.png">
-<img id="JamieChung" width="0" height="0" style="visibility:hidden" src="JamieChung.png">
-<img id="JaneLevy" width="0" height="0" style="visibility:hidden" src="JaneLevy.png">
-<img id="JenifferLoveHewitt" width="0" height="0" style="visibility:hidden" src="JenifferLoveHewitt.png">
-<img id="JenniferLawrence" width="0" height="0" style="visibility:hidden" src="JenniferLawrence.png">
-<img id="" width="0" height="0" style="visibility:hidden" src=".png">
-<img id="" width="0" height="0" style="visibility:hidden" src=".png">
-<img id="" width="0" height="0" style="visibility:hidden" src=".png">
-<img id="" width="0" height="0" style="visibility:hidden" src=".png">
-<img id="" width="0" height="0" style="visibility:hidden" src=".png">
-<img id="" width="0" height="0" style="visibility:hidden" src=".png">
+<img id="two" width="0" height="0" style="visibility:hidden" src="two.png">
+<img id="three" width="0" height="0" style="visibility:hidden" src="three.png">
 
 
 <canvas id="myCanvas" onload = 'move()' onclick = "clickfunc()" width="800" height="400" style=" padding-left: 0;
@@ -90,28 +57,32 @@ var block = function(x,y,p) {
 
 
 block.prototype.draw = function() {
-if (this.p == "AliceEve"){ctx.drawImage(AliceEve, this.x, this.y, 150, 200);}
-if (this.p == "DebbyRyan"){ctx.drawImage(DebbyRyan, this.x, this.y, 150, 200);}
-if (this.p == "BrendaSong"){ctx.drawImage(BrendaSong, this.x, this.y, 150, 200);}
-
+//ctx.drawImage(this.p,this.x, this.y, 150, 200);
 };
 
-blockArray.push(new block(100, 100,"AliceEve"));
+//blockArray.push(new block(100, 100,"AliceEve"));
 
-blockArray.push(new block(300, 100,"DebbyRyan"));
+//blockArray.push(new block(300, 100,"DebbyRyan"));
 
-blockArray.push(new block(500, 100,"BrendaSong"));
+//blockArray.push(new block(500, 100,"BrendaSong"));
 
 
 function move() {
+
 
 //BG
 ctx.fillStyle = "black";
 ctx.fillRect(0,0, 800, 400);
 
-for(var i = 0; i < blockArray.length; i++) {
-        blockArray[i].draw();
-}
+//for(var i = 0; i < blockArray.length; i++) {
+        //blockArray[i].draw();
+//}
+
+ctx.drawImage(one,100, 100, 150, 200);
+
+ctx.drawImage(two,300, 100, 150, 200);
+
+ctx.drawImage(three,500, 100, 150, 200);
 
 
 ctx.fillStyle = "lightblue";
