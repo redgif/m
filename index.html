@@ -58,6 +58,15 @@ var block = function(x,y,p) {
 
 block.prototype.draw = function() {
 ctx.drawImage(this.p,this.x, this.y, 150, 200);
+
+if (canvasX > this.x && canvasX < this.x + 150){
+	if (canvasY > this.y && canvasY < this.y + 200)
+		{ctx.lineWidth = 5;
+	ctx.strokeStyle = "white";
+	ctx.strokeRect(this.x, this.y, 150, 200);}
+
+}
+
 };
 
 blockArray.push(new block(100, 100,three));
