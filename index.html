@@ -57,14 +57,14 @@ var block = function(x,y,p) {
 
 
 block.prototype.draw = function() {
-//ctx.drawImage(this.p,this.x, this.y, 150, 200);
+ctx.drawImage(this.p,this.x, this.y, 150, 200);
 };
 
-//blockArray.push(new block(100, 100,"AliceEve"));
+blockArray.push(new block(100, 100,three));
 
-//blockArray.push(new block(300, 100,"DebbyRyan"));
+blockArray.push(new block(300, 100,two));
 
-//blockArray.push(new block(500, 100,"BrendaSong"));
+blockArray.push(new block(500, 100,one));
 
 var oneimg = document.getElementById("one");
 var twoimg = document.getElementById("two");
@@ -76,16 +76,16 @@ function move() {
 ctx.fillStyle = "black";
 ctx.fillRect(0,0, 800, 400);
 
-//for(var i = 0; i < blockArray.length; i++) {
-        //blockArray[i].draw();
-//}
+for(var i = 0; i < blockArray.length; i++) {
+        blockArray[i].draw();
+}
 
 
-ctx.drawImage(one,100, 100, 150, 200);
+//ctx.drawImage(one,100, 100, 150, 200);
 
-ctx.drawImage(two,300, 100, 150, 200);
+//ctx.drawImage(two,300, 100, 150, 200);
 
-ctx.drawImage(three,500, 100, 150, 200);
+//ctx.drawImage(three,500, 100, 150, 200);
 
 
 ctx.fillStyle = "lightblue";
