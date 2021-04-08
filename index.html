@@ -1,0 +1,83 @@
+<html>
+
+<body style="background-color:lightblue;">
+
+
+<canvas id="myCanvas" onload = 'move()' onclick = "clickfunc()" width="800" height="400" style=" padding-left: 0;
+    padding-right: 0;
+	
+    margin-left: auto;
+    margin-right: auto;
+	margin-top: 100px;
+    display: block;border:3px solid white;">
+</canvas>
+
+</body>
+
+<audio id="myAudio">
+  <source src="fire.mp3" type="audio/mp3">
+</audio>
+
+<audio id="myAudio2">
+  <source src="reloadsound.mp3" type="audio/mp3">
+</audio>
+
+<script>
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+ctx.font = "16px Arial";
+
+var firesound = document.getElementById("myAudio"); 
+
+var reloadsounds = document.getElementById("myAudio2"); 
+
+var canvasX = 0; 
+var canvasY = 0; 
+canvas.addEventListener("mousemove", function(e) { 
+    var cRect = canvas.getBoundingClientRect();              // Gets the CSS positions along with width/height
+    canvasX = Math.round(e.clientX - cRect.left);        // Subtract the 'left' of the canvas from the X/Y
+    canvasY = Math.round(e.clientY - cRect.top);         // positions to get make (0,0) the top left of the    
+});
+
+var myVar = setInterval(move, 20);
+
+var fire = 0; 
+var fireTimer = 0; 
+
+var ammo = 7; 
+
+var reload = 0; 
+
+var reloadTimer = 0;
+
+function playAudio() { 
+  x.play(); 
+} 
+
+function pauseAudio() { 
+  x.pause(); 
+} 
+
+function clickfunc(){
+
+}
+
+function move() {
+
+//BG
+ctx.fillStyle = "black";
+ctx.fillRect(0,0, 800, 400);
+
+
+ctx.fillStyle = "lightblue";
+ctx.fillRect(canvasX,canvasY, 40, 40);
+
+ctx.font = "30px Arial";
+//ctx.fillText("RELOADING", 10, 380);}
+
+}//End of FUNCTION
+
+
+</script>
+
+</html> 
