@@ -44,15 +44,18 @@ function pauseAudio() {
   x.pause(); 
 } 
 
-function clickfunc(){
 
+var clickActive = 0; 
+function clickfunc(){
+clickActive = 1; 
 }
 
 
-var block = function(x,y,p) {
+var block = function(x,y,p,n) {
     this.x = x;
     this.y = y;
 	this.p = p; 
+	this.n = n; 
 };
 
 
@@ -61,23 +64,26 @@ ctx.drawImage(this.p,this.x, this.y, 150, 200);
 
 if (canvasX > this.x && canvasX < this.x + 150){
 	if (canvasY > this.y && canvasY < this.y + 200)
-		{ctx.lineWidth = 5;
+	{ctx.lineWidth = 5;
 	ctx.strokeStyle = "white";
 	ctx.strokeRect(this.x, this.y, 150, 200);}
-
+	
+	if (clickActive == 1){choice = this.n}
 }
-
+ 
 };
 
-blockArray.push(new block(100, 100,three));
+blockArray.push(new block(100, 100,three,"three"));
 
-blockArray.push(new block(300, 100,two));
+blockArray.push(new block(300, 100,two,"two"));
 
-blockArray.push(new block(500, 100,one));
+blockArray.push(new block(500, 100,one,"one"));
 
 var oneimg = document.getElementById("one");
 var twoimg = document.getElementById("two");
 var threeimg = document.getElementById("three");
+
+var choice = ""; 
 function move() {
 
 
@@ -101,7 +107,7 @@ ctx.fillStyle = "lightblue";
 ctx.fillRect(canvasX,canvasY, 10, 10);
 
 ctx.font = "30px Arial";
-//ctx.fillText("RELOADING", 10, 380);}
+ctx.fillText(choice, 10, 380);
 
 }//End of FUNCTION
 
