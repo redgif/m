@@ -3,26 +3,9 @@
 <body style="background-color:lightblue;">
 
 <img id="one" width="0" height="0" style="visibility:hidden" src="one.png">
+
 <img id="two" width="0" height="0" style="visibility:hidden" src="two.png">
 <img id="three" width="0" height="0" style="visibility:hidden" src="three.png">
-
-<img id="AlexandraDaddario" width="0" height="0" style="visibility:hidden" src="AlexandraDaddario.png">
-<img id="AliceEve" width="0" height="0" style="visibility:hidden" src="AliceEve.png">
-<img id="AmandaSeyfried" width="0" height="0" style="visibility:hidden" src="AmandaSeyfried.png">
-
-<img id="AnaDeArmas" width="0" height="0" style="visibility:hidden" src="AnaDeArmas.png">
-<img id="AnneHathaway" width="0" height="0" style="visibility:hidden" src="AnneHathaway.png">
-<img id="AnyaTaylorJoy" width="0" height="0" style="visibility:hidden" src="AnyaTaylorJoy.png">
-<img id="ArielWinter" width="0" height="0" style="visibility:hidden" src="ArielWinter.png">
-<img id="BarbaraPalvin" width="0" height="0" style="visibility:hidden" src="BarbaraPalvin.png">
-<img id="BellaThorne" width="0" height="0" style="visibility:hidden" src="BellaThorne.png">
-<img id="BlakeLively" width="0" height="0" style="visibility:hidden" src="BlakeLively.png">
-<img id="BrendaSong" width="0" height="0" style="visibility:hidden" src="BrendaSong.png">
-<img id="CamilaMendes" width="0" height="0" style="visibility:hidden" src="CamilaMendes.png">
-<img id="ChloeBennet" width="0" height="0" style="visibility:hidden" src="ChloeBennet.png">
-<img id="DaisyRidley" width="0" height="0" style="visibility:hidden" src="DaisyRidley.png">
-
-
 
 
 <canvas id="myCanvas" onload = 'move()' onclick = "clickfunc()" width="800" height="400" style=" padding-left: 0;
@@ -61,77 +44,14 @@ function pauseAudio() {
   x.pause(); 
 } 
 
-
-var clickActive = 0; 
 function clickfunc(){
-clickActive = 1; 
+
 }
-
-
-var block = function(x,y,p,n) {
-    this.x = x;
-    this.y = y;
-	this.p = p; 
-	this.n = n; 
-};
-
-
-block.prototype.draw = function() {
-ctx.drawImage(this.p,this.x, this.y, 150, 200);
-
-ctx.fillStyle = "white";
-ctx.font = "20px Arial";
-ctx.fillText(this.n, this.x, this.y + 190);
-
-if (canvasX > this.x && canvasX < this.x + 150){
-	if (canvasY > this.y && canvasY < this.y + 200)
-	{ctx.lineWidth = 5;
-	ctx.strokeStyle = "white";
-	ctx.strokeRect(this.x, this.y, 150, 200);
-	
-	if (clickActive == 1){
-	choice = this.n;
-     }
-	}
-	
-}
- 
-};
-
-blockArray.push(new block(200, 0,oneimg,"Barbara Palvin"));
-
-blockArray.push(new block(200, 200,twoimg,"DaisyRidley"));
-
-
-//blockArray.push(new block(400, 0,AnaDeArmasimg,"Ana De Armas"));
-
-//blockArray.push(new block(400, 200,BellaThorneimg,"Bella Thorne"));
-
-
-//blockArray.push(new block(600, 0,ChloeBennetimg,"Chloe Bennet"));
-
-//blockArray.push(new block(600, 200,AliceEveimg,"Alice Eve"));
 
 var oneimg = document.getElementById("one");
 var twoimg = document.getElementById("two");
 var threeimg = document.getElementById("three");
 
-var AlexandraDaddarioimg = document.getElementById("AlexandraDaddario");
-var AliceEveimg = document.getElementById("AliceEve");
-var AmandaSeyfriedimg = document.getElementById("AmandaSeyfried");
-var AnaDeArmasimg = document.getElementById("AnaDeArmas");
-var AnneHathawayimg = document.getElementById("AnneHathaway");
-var AnyaTaylorJoyimg = document.getElementById("AnyaTaylorJoy");
-var ArielWinterimg = document.getElementById("ArielWinter");
-var BarbaraPalvinimg = document.getElementById("BarbaraPalvin");
-var BellaThorneimg = document.getElementById("BellaThorne");
-var BrendaSongimg = document.getElementById("BrendaSong");
-var CamilaMendesimg = document.getElementById("CamilaMendes");
-var ChloeBennetimg = document.getElementById("ChloeBennet");
-var DaisyRidleyimg = document.getElementById("DaisyRidley");
-
-	
-var choice = ""; 
 function move() {
 
 
@@ -139,23 +59,19 @@ function move() {
 ctx.fillStyle = "black";
 ctx.fillRect(0,0, 800, 400);
 
-for(var i = 0; i < blockArray.length; i++) {
-        blockArray[i].draw();
-}
 
+ctx.drawImage(oneimg,100, 100, 150, 200);
 
-//ctx.drawImage(one,100, 100, 150, 200);
+ctx.drawImage(twoimg,300, 100, 150, 200);
 
-//ctx.drawImage(two,300, 100, 150, 200);
-
-//ctx.drawImage(three,500, 100, 150, 200);
+ctx.drawImage(threeimg,500, 100, 150, 200);
 
 
 ctx.fillStyle = "lightblue";
-//ctx.fillRect(canvasX,canvasY, 10, 10);
+ctx.fillRect(canvasX,canvasY, 10, 10);
 
 ctx.font = "30px Arial";
-ctx.fillText(choice, 10, 380);
+//ctx.fillText("RELOADING", 10, 380);}
 
 }//End of FUNCTION
 
@@ -163,3 +79,5 @@ ctx.fillText(choice, 10, 380);
 </script>
 
 </html> 
+
+
