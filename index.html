@@ -6,7 +6,7 @@
 <img id="two" width="0" height="0" style="visibility:hidden" src="two.png">
 <img id="three" width="0" height="0" style="visibility:hidden" src="three.png">
 
-<img id="AnaDeArmas" width="0" height="0" style="visibility:hidden" src="AnaDeArmas.png">
+<img id="day1" width="0" height="0" style="visibility:hidden" src="day1.png">
 
 
 <canvas id="myCanvas" onload = 'move()' onclick = "clickfunc()" width="800" height="400" style=" padding-left: 0;
@@ -45,16 +45,30 @@ function pauseAudio() {
   x.pause(); 
 } 
 
+var result = ""; 
 function clickfunc(){
-
+	if (scene == 1){
+		if (canvasX > 30 && canvasX < 180){
+			if (canvasY > 140 && canvasY < 350){
+				result = "Emilia Clarke" 
+			}
+		}
+		if (canvasX > 230 && canvasX < 380){
+			if (canvasY > 140 && canvasY < 350){
+				result = "Maisie Williams" 
+			}
+		}
+	}
+	
 }
 
 var oneimg = document.getElementById("one");
 var twoimg = document.getElementById("two");
 var threeimg = document.getElementById("three");
 
-var anadearmasimg = document.getElementById("AnaDeArmas");
+var dayoneimg = document.getElementById("day1");
 
+var scene = 1; 
 
 function move() {
 
@@ -63,19 +77,24 @@ function move() {
 ctx.fillStyle = "black";
 ctx.fillRect(0,0, 800, 400);
 
-
-ctx.drawImage(anadearmasimg,100, 100, 150, 200);
-
-ctx.drawImage(twoimg,300, 100, 150, 200);
-
-ctx.drawImage(threeimg,500, 100, 150, 200);
+if (scene == 1){
+ctx.drawImage(dayoneimg,0, 0, 800, 400);
+}
 
 
-ctx.fillStyle = "lightblue";
-ctx.fillRect(canvasX,canvasY, 10, 10);
+
+//ctx.drawImage(oneimg,100, 100, 150, 200);
+
+//ctx.fillRect(canvasX,canvasY, 10, 10);
+
+ctx.fillStyle = "white";
 
 ctx.font = "30px Arial";
-//ctx.fillText("RELOADING", 10, 380);}
+ctx.fillText(canvasX, 10, 380);
+ctx.fillText(canvasY, 100, 380);
+
+ctx.fillText(result, 10, 30);
+
 
 }//End of FUNCTION
 
