@@ -3,9 +3,26 @@
 <body style="background-color:lightblue;">
 
 <img id="one" width="0" height="0" style="visibility:hidden" src="one.png">
-
 <img id="two" width="0" height="0" style="visibility:hidden" src="two.png">
 <img id="three" width="0" height="0" style="visibility:hidden" src="three.png">
+
+<img id="AlexandraDaddario.png" width="0" height="0" style="visibility:hidden" src="AlexandraDaddario.png">
+<img id="AliceEve.png" width="0" height="0" style="visibility:hidden" src="AliceEve.png">
+<img id="AmandaSeyfried.png" width="0" height="0" style="visibility:hidden" src="AmandaSeyfried.png">
+
+<img id="AnaDeArmas.png" width="0" height="0" style="visibility:hidden" src="AnaDeArmas.png">
+<img id="AnneHathaway.png" width="0" height="0" style="visibility:hidden" src="AnneHathaway.png">
+<img id="AnyaTaylorJoy.png" width="0" height="0" style="visibility:hidden" src="AnyaTaylorJoy.png">
+<img id="ArielWinter.png" width="0" height="0" style="visibility:hidden" src="ArielWinter.png">
+<img id="BarbaraPalvin.png" width="0" height="0" style="visibility:hidden" src="BarbaraPalvin.png">
+<img id="BellaThorne.png" width="0" height="0" style="visibility:hidden" src="BellaThorne.png">
+<img id="BlakeLively.png" width="0" height="0" style="visibility:hidden" src="BlakeLively.png">
+<img id="BrendaSong.png" width="0" height="0" style="visibility:hidden" src="BrendaSong.png">
+<img id="CamilaMendes.png" width="0" height="0" style="visibility:hidden" src="CamilaMendes.png">
+<img id="ChloeBennet.png" width="0" height="0" style="visibility:hidden" src="ChloeBennet.png">
+<img id="DaisyRidley.png" width="0" height="0" style="visibility:hidden" src="DaisyRidley.png">
+
+
 
 
 <canvas id="myCanvas" onload = 'move()' onclick = "clickfunc()" width="800" height="400" style=" padding-left: 0;
@@ -62,22 +79,38 @@ var block = function(x,y,p,n) {
 block.prototype.draw = function() {
 ctx.drawImage(this.p,this.x, this.y, 150, 200);
 
+ctx.fillStyle = "white";
+ctx.font = "20px Arial";
+ctx.fillText(this.n, this.x, this.y + 190);
+
 if (canvasX > this.x && canvasX < this.x + 150){
 	if (canvasY > this.y && canvasY < this.y + 200)
 	{ctx.lineWidth = 5;
 	ctx.strokeStyle = "white";
-	ctx.strokeRect(this.x, this.y, 150, 200);}
+	ctx.strokeRect(this.x, this.y, 150, 200);
 	
-	if (clickActive == 1){choice = this.n}
+	if (clickActive == 1){
+	choice = this.n;
+     }
+	}
+	
 }
  
 };
 
-blockArray.push(new block(100, 100,three,"three"));
+blockArray.push(new block(200, 0,BarbaraPalvin,"Barbara Palvin"));
 
-blockArray.push(new block(300, 100,two,"two"));
+blockArray.push(new block(200, 200,DaisyRidley,"DaisyRidley"));
 
-blockArray.push(new block(500, 100,one,"one"));
+
+blockArray.push(new block(400, 0,AnaDeArmas,"Ana De Armas"));
+
+blockArray.push(new block(400, 200,BellaThorne,"Bella Thorne"));
+
+
+blockArray.push(new block(600, 0,ChloeBennet,"Chloe Bennet"));
+
+blockArray.push(new block(600, 200,AliceEve,"Alice Eve"));
 
 var oneimg = document.getElementById("one");
 var twoimg = document.getElementById("two");
@@ -104,7 +137,7 @@ for(var i = 0; i < blockArray.length; i++) {
 
 
 ctx.fillStyle = "lightblue";
-ctx.fillRect(canvasX,canvasY, 10, 10);
+//ctx.fillRect(canvasX,canvasY, 10, 10);
 
 ctx.font = "30px Arial";
 ctx.fillText(choice, 10, 380);
