@@ -44,18 +44,31 @@ function playAudio() {
 function pauseAudio() { 
   x.pause(); 
 } 
-
-var result = ""; 
+var result = "";
+var resultsArray = [];
 function clickfunc(){
 	if (scene == 1){
 		if (canvasX > 30 && canvasX < 180){
 			if (canvasY > 140 && canvasY < 350){
-				result = "Emilia Clarke" 
+				resultsArray.push("Emilia Clarke");
 			}
 		}
 		if (canvasX > 230 && canvasX < 380){
 			if (canvasY > 140 && canvasY < 350){
-				result = "Maisie Williams" 
+			resultsArray.push("Maisie Williams");
+
+			}
+		}
+		if (canvasX > 430 && canvasX < 580){
+			if (canvasY > 140 && canvasY < 350){
+			 resultsArray.push("Mila Kunis");
+
+			}
+		}
+		
+		if (canvasX > 630 && canvasX < 780){
+			if (canvasY > 140 && canvasY < 350){
+			resultsArray.push("Natalie Dormer");
 			}
 		}
 	}
@@ -89,11 +102,11 @@ ctx.drawImage(dayoneimg,0, 0, 800, 400);
 
 ctx.fillStyle = "white";
 
-ctx.font = "30px Arial";
+ctx.font = "20px Arial";
 ctx.fillText(canvasX, 10, 380);
 ctx.fillText(canvasY, 100, 380);
 
-ctx.fillText(result, 10, 30);
+ctx.fillText(resultsArray, 10, 30);
 
 
 }//End of FUNCTION
