@@ -3,9 +3,10 @@
 <body style="background-color:lightblue;">
 
 <img id="one" width="0" height="0" style="visibility:hidden" src="one.png">
-
 <img id="two" width="0" height="0" style="visibility:hidden" src="two.png">
 <img id="three" width="0" height="0" style="visibility:hidden" src="three.png">
+
+<img id="AnaDeArmas" width="0" height="0" style="visibility:hidden" src="AnaDeArmas.png">
 
 
 <canvas id="myCanvas" onload = 'move()' onclick = "clickfunc()" width="800" height="400" style=" padding-left: 0;
@@ -52,6 +53,9 @@ var oneimg = document.getElementById("one");
 var twoimg = document.getElementById("two");
 var threeimg = document.getElementById("three");
 
+var anadearmasimg = document.getElementById("AnaDeArmas");
+
+
 function move() {
 
 
@@ -60,7 +64,7 @@ ctx.fillStyle = "black";
 ctx.fillRect(0,0, 800, 400);
 
 
-ctx.drawImage(oneimg,100, 100, 150, 200);
+ctx.drawImage(anadearmasimg,100, 100, 150, 200);
 
 ctx.drawImage(twoimg,300, 100, 150, 200);
 
