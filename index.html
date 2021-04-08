@@ -37,19 +37,6 @@
 </body>
 
 <script>
-var AlexandraDaddario = document.getElementById("AlexandraDaddario");
-var AliceEve = document.getElementById("AliceEve");
-var AmandaSeyfried = document.getElementById("AmandaSeyfried");
-var AnaDeArmas = document.getElementById("AnaDeArmas");
-var AnneHathaway = document.getElementById("AnneHathaway");
-var AnyaTaylorJoy = document.getElementById("AnyaTaylorJoy");
-var ArielWinter = document.getElementById("ArielWinter");
-var BarbaraPalvin = document.getElementById("BarbaraPalvin");
-var BellaThorne = document.getElementById("BellaThorne");
-var BrendaSong = document.getElementById("BrendaSong");
-var CamilaMendes = document.getElementById("CamilaMendes");
-var ChloeBennet = document.getElementById("ChloeBennet");
-var DaisyRidley = document.getElementById("DaisyRidley");
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 ctx.font = "16px Arial";
@@ -111,25 +98,37 @@ if (canvasX > this.x && canvasX < this.x + 150){
  
 };
 
-blockArray.push(new block(200, 0,BarbaraPalvin,"Barbara Palvin"));
+blockArray.push(new block(200, 0,BarbaraPalvinimg,"Barbara Palvin"));
 
-blockArray.push(new block(200, 200,DaisyRidley,"DaisyRidley"));
-
-
-blockArray.push(new block(400, 0,AnaDeArmas,"Ana De Armas"));
-
-blockArray.push(new block(400, 200,BellaThorne,"Bella Thorne"));
+blockArray.push(new block(200, 200,DaisyRidleyimg,"DaisyRidley"));
 
 
-blockArray.push(new block(600, 0,ChloeBennet,"Chloe Bennet"));
+blockArray.push(new block(400, 0,AnaDeArmasimg,"Ana De Armas"));
 
-blockArray.push(new block(600, 200,AliceEve,"Alice Eve"));
+blockArray.push(new block(400, 200,BellaThorneimg,"Bella Thorne"));
+
+
+blockArray.push(new block(600, 0,ChloeBennetimg,"Chloe Bennet"));
+
+blockArray.push(new block(600, 200,AliceEveimg,"Alice Eve"));
 
 var oneimg = document.getElementById("one");
 var twoimg = document.getElementById("two");
 var threeimg = document.getElementById("three");
 
-
+var AlexandraDaddarioimg = document.getElementById("AlexandraDaddario");
+var AliceEveimg = document.getElementById("AliceEve");
+var AmandaSeyfriedimg = document.getElementById("AmandaSeyfried");
+var AnaDeArmasimg = document.getElementById("AnaDeArmas");
+var AnneHathawayimg = document.getElementById("AnneHathaway");
+var AnyaTaylorJoyimg = document.getElementById("AnyaTaylorJoy");
+var ArielWinterimg = document.getElementById("ArielWinter");
+var BarbaraPalvinimg = document.getElementById("BarbaraPalvin");
+var BellaThorneimg = document.getElementById("BellaThorne");
+var BrendaSongimg = document.getElementById("BrendaSong");
+var CamilaMendesimg = document.getElementById("CamilaMendes");
+var ChloeBennetimg = document.getElementById("ChloeBennet");
+var DaisyRidleyimg = document.getElementById("DaisyRidley");
 
 	
 var choice = ""; 
