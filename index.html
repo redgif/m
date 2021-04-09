@@ -13,6 +13,7 @@
 <img id="day5" width="0" height="0" style="visibility:hidden" src="day5.png">
 <img id="day6" width="0" height="0" style="visibility:hidden" src="day6.png">
 <img id="day7" width="0" height="0" style="visibility:hidden" src="day7.png">
+<img id="end" width="0" height="0" style="visibility:hidden" src="end.png">
 
 <img id="zero" width="0" height="0" style="visibility:hidden" src="zero.png">
 
@@ -160,6 +161,7 @@ var daysiximg = document.getElementById("day6");
 var daysevenimg = document.getElementById("day7");
 
 var zero = document.getElementById("zero");
+var endimg = document.getElementById("end");
 
 var scene = 0; 
 
@@ -174,6 +176,7 @@ if (clicknum == 4){shiftX = shiftX + 10; if (shiftX > 1600){shiftX = 1600; scene
 if (clicknum == 5){shiftX = shiftX + 10; if (shiftX > 2000){shiftX = 2000; scene = 5;}}
 if (clicknum == 6){shiftX = shiftX + 10; if (shiftX > 2400){shiftX = 2400; scene = 6;}}
 if (clicknum == 7){shiftX = shiftX + 10; if (shiftX > 2800){shiftX = 2800; scene = 7;}}
+if (clicknum == 8){shiftX = shiftX + 10; if (shiftX > 3200){shiftX = 3200; scene = 8;}}
 
 
 //BG
@@ -189,8 +192,9 @@ ctx.drawImage(dayfiveimg,0, 2000 - shiftX, 800, 400);
 ctx.drawImage(daysiximg,0, 2400 - shiftX, 800, 400);
 ctx.drawImage(daysevenimg,0, 2800 - shiftX, 800, 400);
 
+ctx.drawImage(endimg,0, 3200 - shiftX, 800, 400);
 
-if (scene > 0){
+if (scene > 0 && scene < 8){
 if (canvasX > 30 && canvasX < 180){
 		if (canvasY > 140 && canvasY < 350){
 			ctx.strokeStyle = "white";
