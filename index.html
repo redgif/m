@@ -22,6 +22,10 @@
     display: block;border:3px solid white;">
 </canvas>
 
+<textarea id="outputs" style="background-color: black; color: white; margin-top:10px" rows="4" cols="50">
+
+
+</textarea>
 </body>
 
 <script>
@@ -89,6 +93,7 @@ function clickfunc(){
 		}
 	}
 	
+	document.getElementById("outputs").value = resultsArray;
 }
 
 var oneimg = document.getElementById("one");
@@ -162,7 +167,7 @@ ctx.font = "20px Arial";
 //ctx.fillText(canvasX, 10, 380);
 //ctx.fillText(canvasY, 100, 380);
 
-ctx.fillText(resultsArray, 10, 30);
+//ctx.fillText(resultsArray, 10, 30);
 
 
 }//End of FUNCTION
