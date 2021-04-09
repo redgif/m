@@ -95,13 +95,43 @@ ctx.drawImage(dayoneimg,0, 0, 800, 400);
 }
 
 
+if (canvasX > 30 && canvasX < 180){
+		if (canvasY > 140 && canvasY < 350){
+			ctx.strokeStyle = "white";
+			ctx.lineWidth = 5;
+			ctx.strokeRect(28,140, 150, 200);
+		}
+}
+
+if (canvasX > 230 && canvasX < 380){
+		if (canvasY > 140 && canvasY < 350){
+			ctx.strokeStyle = "white";
+			ctx.lineWidth = 5;
+			ctx.strokeRect(233,140, 150, 200);
+		}
+}
+
+if (canvasX > 430 && canvasX < 580){
+		if (canvasY > 140 && canvasY < 350){
+			ctx.strokeStyle = "white";
+			ctx.lineWidth = 5;
+			ctx.strokeRect(430,140, 150, 200);
+		}
+}
+
+if (canvasX > 630 && canvasX < 780){
+		if (canvasY > 140 && canvasY < 350){
+			ctx.strokeStyle = "white";
+			ctx.lineWidth = 5;
+			ctx.strokeRect(620,140, 150, 200);
+		}
+}
+
 
 //ctx.drawImage(oneimg,100, 100, 150, 200);
 
-//ctx.fillRect(canvasX,canvasY, 10, 10);
 
 ctx.fillStyle = "white";
-
 ctx.font = "20px Arial";
 ctx.fillText(canvasX, 10, 380);
 ctx.fillText(canvasY, 100, 380);
