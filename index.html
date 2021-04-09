@@ -9,6 +9,10 @@
 <img id="day1" width="0" height="0" style="visibility:hidden" src="day1.png">
 <img id="day2" width="0" height="0" style="visibility:hidden" src="day2.png">
 <img id="day3" width="0" height="0" style="visibility:hidden" src="day3.png">
+<img id="day4" width="0" height="0" style="visibility:hidden" src="day4.png">
+<img id="day5" width="0" height="0" style="visibility:hidden" src="day5.png">
+<img id="day6" width="0" height="0" style="visibility:hidden" src="day6.png">
+<img id="day7" width="0" height="0" style="visibility:hidden" src="day7.png">
 
 <img id="zero" width="0" height="0" style="visibility:hidden" src="zero.png">
 
@@ -63,6 +67,10 @@ function clickfunc(){
 				if (scene == 1){resultsArray.push("Emilia Clarke");}
 				if (scene == 2){resultsArray.push("Vanessa Hudgens");}
 				if (scene == 3){resultsArray.push("Zendaya");}
+				if (scene == 4){resultsArray.push("Scarlett Johansson");}
+				if (scene == 5){resultsArray.push("Sydney Sweeney");}
+				if (scene == 6){resultsArray.push("Taylor Swift");}
+				if (scene == 7){resultsArray.push("Victoria Justice");}
 
 			}
 		}
@@ -71,6 +79,10 @@ function clickfunc(){
 			if (scene == 1){resultsArray.push("Maisie Williams");}
 			if (scene == 2){resultsArray.push("Naomi Scott");}
 			if (scene == 3){resultsArray.push("Rihanna");}
+			if (scene == 4){resultsArray.push("Margot Robbie");}
+			if (scene == 5){resultsArray.push("Megan Fox");}
+			if (scene == 6){resultsArray.push("Sofia Vergara");}
+			if (scene == 7){resultsArray.push("Gal Gadot");}
 
 			}
 		}
@@ -79,6 +91,10 @@ function clickfunc(){
 			 if (scene == 1){resultsArray.push("Mila Kunis");}
 			if (scene == 2){resultsArray.push("Emmy Rossum");}
 			if (scene == 3){resultsArray.push("Hayley Atwell");}
+			if (scene == 4){resultsArray.push("Emma Watson");}
+			if (scene == 5){resultsArray.push("Elizabeth Olsen");}
+			if (scene == 6){resultsArray.push("Isabela Merced");}
+			if (scene == 7){resultsArray.push("Ana De Armas");}
 
 			}
 		}
@@ -88,6 +104,10 @@ function clickfunc(){
 			if (scene == 1){resultsArray.push("Natalie Dormer");}
 			if (scene == 2){resultsArray.push("Brenda Song");}
 			if (scene == 3){resultsArray.push("Alice Eve");}
+			if (scene == 4){resultsArray.push("Anya Taylor Joy");}
+			if (scene == 5){resultsArray.push("Barbara Palvin");}
+			if (scene == 6){resultsArray.push("Emma Stone");}
+			if (scene == 7){resultsArray.push("Alexandra Daddario");}
 
 			}
 		}
@@ -103,6 +123,11 @@ var threeimg = document.getElementById("three");
 var dayoneimg = document.getElementById("day1");
 var daytwoimg = document.getElementById("day2");
 var daythreeimg = document.getElementById("day3");
+var dayfourimg = document.getElementById("day4");
+var dayfiveimg = document.getElementById("day5");
+var daysiximg = document.getElementById("day6");
+var daysevenimg = document.getElementById("day7");
+
 var zero = document.getElementById("zero");
 
 var scene = 0; 
@@ -114,6 +139,11 @@ function move() {
 if (clicknum == 1){shiftX = shiftX + 10; if (shiftX > 400){shiftX = 400; scene = 1;}}
 if (clicknum == 2){shiftX = shiftX + 10; if (shiftX > 800){shiftX = 800; scene = 2;}}
 if (clicknum == 3){shiftX = shiftX + 10; if (shiftX > 1200){shiftX = 1200; scene = 3;}}
+if (clicknum == 4){shiftX = shiftX + 10; if (shiftX > 1600){shiftX = 1600; scene = 4;}}
+if (clicknum == 5){shiftX = shiftX + 10; if (shiftX > 2000){shiftX = 2000; scene = 5;}}
+if (clicknum == 6){shiftX = shiftX + 10; if (shiftX > 2400){shiftX = 2400; scene = 6;}}
+if (clicknum == 7){shiftX = shiftX + 10; if (shiftX > 2800){shiftX = 2800; scene = 7;}}
+
 
 //BG
 ctx.fillStyle = "black";
@@ -123,9 +153,13 @@ ctx.drawImage(zero,0, 0 - shiftX, 800, 400);
 ctx.drawImage(dayoneimg,0, 400 - shiftX, 800, 400);
 ctx.drawImage(daytwoimg,0, 800 - shiftX, 800, 400);
 ctx.drawImage(daythreeimg,0, 1200 - shiftX, 800, 400);
+ctx.drawImage(dayfourimg,0, 1600 - shiftX, 800, 400);
+ctx.drawImage(dayfiveimg,0, 2000 - shiftX, 800, 400);
+ctx.drawImage(daysiximg,0, 2400 - shiftX, 800, 400);
+ctx.drawImage(daysevenimg,0, 2800 - shiftX, 800, 400);
 
 
-if (scene > 0 && shiftX == 400 || shiftX == 800 || shiftX == 1200){
+if (scene > 0){
 if (canvasX > 30 && canvasX < 180){
 		if (canvasY > 140 && canvasY < 350){
 			ctx.strokeStyle = "white";
