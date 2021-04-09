@@ -8,6 +8,8 @@
 
 <img id="day1" width="0" height="0" style="visibility:hidden" src="day1.png">
 <img id="day2" width="0" height="0" style="visibility:hidden" src="day2.png">
+<img id="day3" width="0" height="0" style="visibility:hidden" src="day3.png">
+
 <img id="zero" width="0" height="0" style="visibility:hidden" src="zero.png">
 
 
@@ -56,6 +58,7 @@ function clickfunc(){
 			if (canvasY > 140 && canvasY < 350){
 				if (scene == 1){resultsArray.push("Emilia Clarke");}
 				if (scene == 2){resultsArray.push("Vanessa Hudgens");}
+				if (scene == 3){resultsArray.push("Zendaya");}
 
 			}
 		}
@@ -63,6 +66,7 @@ function clickfunc(){
 			if (canvasY > 140 && canvasY < 350){
 			if (scene == 1){resultsArray.push("Maisie Williams");}
 			if (scene == 2){resultsArray.push("Naomi Scott");}
+			if (scene == 3){resultsArray.push("Rihanna");}
 
 			}
 		}
@@ -70,6 +74,7 @@ function clickfunc(){
 			if (canvasY > 140 && canvasY < 350){
 			 if (scene == 1){resultsArray.push("Mila Kunis");}
 			if (scene == 2){resultsArray.push("Emmy Rossum");}
+			if (scene == 3){resultsArray.push("Hayley Atwell");}
 
 			}
 		}
@@ -78,6 +83,7 @@ function clickfunc(){
 			if (canvasY > 140 && canvasY < 350){
 			if (scene == 1){resultsArray.push("Natalie Dormer");}
 			if (scene == 2){resultsArray.push("Brenda Song");}
+			if (scene == 3){resultsArray.push("Alice Eve");}
 
 			}
 		}
@@ -91,6 +97,7 @@ var threeimg = document.getElementById("three");
 
 var dayoneimg = document.getElementById("day1");
 var daytwoimg = document.getElementById("day2");
+var daythreeimg = document.getElementById("day3");
 var zero = document.getElementById("zero");
 
 var scene = 0; 
@@ -101,6 +108,7 @@ function move() {
 
 if (clicknum == 1){shiftX = shiftX + 10; if (shiftX > 400){shiftX = 400; scene = 1;}}
 if (clicknum == 2){shiftX = shiftX + 10; if (shiftX > 800){shiftX = 800; scene = 2;}}
+if (clicknum == 3){shiftX = shiftX + 10; if (shiftX > 1200){shiftX = 1200; scene = 3;}}
 
 //BG
 ctx.fillStyle = "black";
@@ -109,9 +117,10 @@ ctx.fillRect(0,0, 800, 800);
 ctx.drawImage(zero,0, 0 - shiftX, 800, 400);
 ctx.drawImage(dayoneimg,0, 400 - shiftX, 800, 400);
 ctx.drawImage(daytwoimg,0, 800 - shiftX, 800, 400);
+ctx.drawImage(daythreeimg,0, 1200 - shiftX, 800, 400);
 
 
-if (scene > 0 && shiftX == 400 || shiftX == 800){
+if (scene > 0 && shiftX == 400 || shiftX == 800 || shiftX == 1200){
 if (canvasX > 30 && canvasX < 180){
 		if (canvasY > 140 && canvasY < 350){
 			ctx.strokeStyle = "white";
@@ -150,8 +159,8 @@ if (canvasX > 630 && canvasX < 780){
 
 ctx.fillStyle = "white";
 ctx.font = "20px Arial";
-ctx.fillText(canvasX, 10, 380);
-ctx.fillText(canvasY, 100, 380);
+//ctx.fillText(canvasX, 10, 380);
+//ctx.fillText(canvasY, 100, 380);
 
 ctx.fillText(resultsArray, 10, 30);
 
