@@ -26,10 +26,21 @@
     display: block;border:3px solid white;">
 </canvas>
 
+<button onclick="myFunction()" style=" background-color: blue; 
+  margin-left: 200px;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;">CLICK HERE TO COPY YOUR CHOICES</button>
+  
 <textarea id="outputs" style="background-color: black; color: white; margin-top:10px" rows="4" cols="50">
-
-
 </textarea>
+
+
+
 </body>
 
 <script>
@@ -45,6 +56,13 @@ canvas.addEventListener("mousemove", function(e) {
     canvasY = Math.round(e.clientY - cRect.top);         // positions to get make (0,0) the top left of the    
 });
 
+function myFunction() {
+  var copyText = document.getElementById("outputs");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999)
+  document.execCommand("copy");
+}
+
 var myVar = setInterval(move, 20);
 
 var blockArray = [];
@@ -59,6 +77,8 @@ function pauseAudio() {
 var result = "";
 var resultsArray = [];
 var clicknum = 0;
+
+var outputString = ""; 
 function clickfunc(){
      clicknum++;
 	if (scene > 0){
@@ -113,7 +133,18 @@ function clickfunc(){
 		}
 	}
 	
-	document.getElementById("outputs").value = resultsArray;
+	if (clicknum == 8){
+	outputString = outputString + "Day 1: " + resultsArray[0] + "\n" + "\n" ; 
+	outputString = outputString + "Day 2: " + resultsArray[1]+ "\n" + "\n"; 
+	outputString = outputString + "Day 3: " + resultsArray[2]+ "\n" + "\n"; 
+	outputString = outputString + "Day 4: " + resultsArray[3]+ "\n" + "\n"; 
+	outputString = outputString + "Day 5: " + resultsArray[4]+ "\n" + "\n"; 
+	outputString = outputString + "Day 6: " + resultsArray[5]+ "\n" + "\n"; 
+	outputString = outputString + "Day 7: " + resultsArray[6]+ "\n" + "\n"; 
+
+	document.getElementById("outputs").value = outputString;
+	
+	}
 }
 
 var oneimg = document.getElementById("one");
