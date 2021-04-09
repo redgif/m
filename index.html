@@ -7,6 +7,7 @@
 <img id="three" width="0" height="0" style="visibility:hidden" src="three.png">
 
 <img id="day1" width="0" height="0" style="visibility:hidden" src="day1.png">
+<img id="day2" width="0" height="0" style="visibility:hidden" src="day2.png">
 
 
 <canvas id="myCanvas" onload = 'move()' onclick = "clickfunc()" width="800" height="400" style=" padding-left: 0;
@@ -46,29 +47,37 @@ function pauseAudio() {
 } 
 var result = "";
 var resultsArray = [];
+var clicknum = 0;
 function clickfunc(){
-	if (scene == 1){
+     clicknum++;
+	if (scene > 0){
 		if (canvasX > 30 && canvasX < 180){
 			if (canvasY > 140 && canvasY < 350){
-				resultsArray.push("Emilia Clarke");
+				if (scene == 1){resultsArray.push("Emilia Clarke");}
+				if (scene == 2){resultsArray.push("Vanessa Hudgens");}
+
 			}
 		}
 		if (canvasX > 230 && canvasX < 380){
 			if (canvasY > 140 && canvasY < 350){
-			resultsArray.push("Maisie Williams");
+			if (scene == 1){resultsArray.push("Maisie Williams");}
+			if (scene == 2){resultsArray.push("Naomi Scott");}
 
 			}
 		}
 		if (canvasX > 430 && canvasX < 580){
 			if (canvasY > 140 && canvasY < 350){
-			 resultsArray.push("Mila Kunis");
+			 if (scene == 1){resultsArray.push("Mila Kunis");}
+			if (scene == 2){resultsArray.push("Emmy Rossum");}
 
 			}
 		}
 		
 		if (canvasX > 630 && canvasX < 780){
 			if (canvasY > 140 && canvasY < 350){
-			resultsArray.push("Natalie Dormer");
+			if (scene == 1){resultsArray.push("Natalie Dormer");}
+			if (scene == 2){resultsArray.push("Brenda Song");}
+
 			}
 		}
 	}
@@ -80,21 +89,27 @@ var twoimg = document.getElementById("two");
 var threeimg = document.getElementById("three");
 
 var dayoneimg = document.getElementById("day1");
+var daytwoimg = document.getElementById("day2");
 
-var scene = 1; 
+var scene = 0; 
 
+var shiftX = 0;
 function move() {
 
 
+if (clicknum == 1){shiftX = shiftX + 10; if (shiftX > 400){shiftX = 400; scene = 1;}}
+if (clicknum == 2){shiftX = shiftX + 10; if (shiftX > 800){shiftX = 800; scene = 2;}}
+
 //BG
 ctx.fillStyle = "black";
-ctx.fillRect(0,0, 800, 400);
-
-if (scene == 1){
-ctx.drawImage(dayoneimg,0, 0, 800, 400);
-}
+ctx.fillRect(0,0, 800, 800);
 
 
+ctx.drawImage(dayoneimg,0, 400 - shiftX, 800, 400);
+ctx.drawImage(daytwoimg,0, 800 - shiftX, 800, 400);
+
+
+if (scene > 0 && shiftX == 400 || shiftX == 800){
 if (canvasX > 30 && canvasX < 180){
 		if (canvasY > 140 && canvasY < 350){
 			ctx.strokeStyle = "white";
@@ -126,7 +141,7 @@ if (canvasX > 630 && canvasX < 780){
 			ctx.strokeRect(620,140, 150, 200);
 		}
 }
-
+}
 
 //ctx.drawImage(oneimg,100, 100, 150, 200);
 
